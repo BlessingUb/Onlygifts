@@ -54,11 +54,6 @@ const Input = styled.input`
   border: none;
 `;
 
-// const Logo = styled.div`
-//   font-weight: bold;
-//   font-size: 40px;
-// `;
-
 const Navbar = () => {
   return (
     <Container>
