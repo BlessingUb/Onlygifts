@@ -25,6 +25,7 @@
     "jest": "^27.2.4",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.0.9",
+    "nodemon": "^2.0.13",
     "passport": "^0.5.0",
     "stripe": "^8.181.0",
     "uuid": "^8.3.2",
