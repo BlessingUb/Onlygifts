@@ -7,6 +7,17 @@ router.post("/profile", (req, res) => {
     .catch((err) => res.status(400).json("Error: " + err));
 });
 
+router.route("/").get((req, res) => {
+  Message.find({ })
+    .then((data) => {
+      console.log('Data: ', data);
+      res.json(data);
+    })
+    .catch((error) => {
+      console.log('error: ', error);
+    });
+});
+
 router.route("/send").post((req, res) => {
   const name = req.body.name;
   const email = req.body.email;

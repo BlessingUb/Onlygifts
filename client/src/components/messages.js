@@ -13,7 +13,7 @@ import axios from 'axios';
   }
 
   getMessage = () => {
-    axios.get("http://localhost:5000/messages/send")
+    axios.get("http://localhost:5000/messages")
     .then((response) => {
       this.setState({ messages : data});
       console.log('Data received!')
@@ -79,7 +79,7 @@ import axios from 'axios';
 
     //JSX
     return(
-      <div className="app">
+      <div className="message">
         <h2>Inbox</h2>
 
 

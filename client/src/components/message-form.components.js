@@ -49,7 +49,7 @@ export default class MessageForm extends Component {
     console.log(message);
 
     axios
-      .post("http://localhost:5000/messages/send", message)
+      .post("http://localhost:5000/messages", message)
       .then((res) => {
         if (res.status === 200) {
           console.log(res.data);
