@@ -86,6 +86,7 @@ button {
 
 .home {
   font-size: xxx-large;
+  display: block;
   font-family: "Lucida Console", "Courier New", monospace;
   text-align: center;
   color: rgb(243, 234, 243);

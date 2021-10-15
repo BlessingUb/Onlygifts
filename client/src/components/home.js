@@ -23,7 +23,7 @@ export default class Home extends Component {
         }
       },
       number: {
-        value: 50
+        value: 220
       },
       size: {
         value: 3
