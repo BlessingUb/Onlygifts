@@ -80,3 +80,6 @@ button {
   visibility: visible;
   opacity: 1;
 }
+.homeparticle{
+  background-color: rgb(107, 63, 147);
+}
