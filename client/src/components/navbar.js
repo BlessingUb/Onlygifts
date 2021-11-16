@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Gift from '../images/gift1.gif';
 import GiftBox from '../images/gift3.gif';
-import Container from '../components/Form/Container';
-import MsgContainer from '../components/Form/MessageContainer';
+import Container from './Form/Container';
+import MsgContainer from './Form/MessageContainer';
 
 const userSessionExists = document.cookie.length > 0;
 const noSession = document.cookie.length === 0;
@@ -40,7 +40,7 @@ export default class Navbar extends Component {
           {userSessionExists && (
             <div className='collpase navbar-collapse'>
               <li class='li-box'>
-                <Link to='/login' class='li-box'>
+                <Link to='/logout' class='li-box'>
                   Log Out
                 </Link>
               </li>

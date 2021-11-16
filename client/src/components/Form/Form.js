@@ -1,44 +1,42 @@
-// import React from "react";
-import StripeCheckout from 'react-stripe-checkout';
-import { useState, useEffect } from 'react';
+import React from "react";
+import { useState } from "react";
 import axios from 'axios';
 // import 'client/src/App.css';
 
-const KEY =
-  'pk_test_51Jj97mFjKtpO9Sxr3ooea52A6mRUwCAMAsFfSmkqQwiLRq2y2krLim9DeUOASuZwBPtYCSXvX5Nj2X3Lf0VfvHKB00r77vAAZ1';
 
-export const Form = ({ onSubmit }) => {
-  const [stripeToken, setStripeToken] = useState(null);
 
-  const onToken = (token) => {
-    setStripeToken(token);
+export const Form = () => {
+  const [ name, setName ] = useState('');
+  const [ email, setEmail ] = useState('');
+  const [ message, setMessage ] = useState('');
+
+  const initialValues = {
+    name,
+    email,
+    message,
   };
 
-  useEffect(() => {
-    const makeRequest = async () => {
-      try {
-        const res = await axios.post('http://localhost:5000/checkout/payment', {
-          tokenId: stripeToken.id,
-          amount: 500,
-        });
-        console.log(res.data);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    stripeToken && makeRequest();
-  }, [stripeToken]);
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log(initialValues)
+    axios
+      .post('http://localhost:5000/messages/send', initialValues)
+      .then(() => res.status(200).json("Message sent!"))
+      .catch(err => {
+        console.log("Error in messages!");
+      })
+  };
 
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={handleSubmit}> 
       <div className='form-group'>
         <label htmlFor='name'>Name</label>
-        <input type='name' className='form-control gift_form_name' id='name' placeholder='Enter name here' />
+        <input type='name' onChange={(e) => setName(e.target.value)} className='form-control gift_form_name' id='name' placeholder='Enter name here' />
       </div>
       <div className='form-group'>
         <label htmlFor='email'>Email</label>
         <input
-          type='email'
+          type='email' onChange={(e) => setEmail(e.target.value)}
           className='form-control gift_form_email'
           id='email'
           placeholder='mr_scrooge@onlygifts.com'
@@ -48,26 +46,19 @@ export const Form = ({ onSubmit }) => {
         <label htmlFor='email'>Message</label>
         <input
           id='input'
-          type='textarea'
+          type='textarea' onChange={(e) => setMessage(e.target.value)}
           className='form-control gift_form_message'
           id='message'
           placeholder='Drop a message...'
         />
       </div>
       <div className='form-group'>
-        <StripeCheckout
-          name='onlyGifts'
-          image=''
-          email
-          description='Your total is £5'
-          amount={500}
-          token={onToken}
-          stripeKey={KEY}
-        >
+        
+        
           <button id='button' type='submit'>
             Continue to payment
           </button>
-        </StripeCheckout>
+       
       </div>
     </form>
   );

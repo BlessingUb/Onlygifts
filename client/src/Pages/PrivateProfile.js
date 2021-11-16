@@ -10,7 +10,7 @@ import '../App.css';
 const PrivateProfile = () => {
   const Username = Cookies.get('username');
 
-  const [link, setLink] = useState(`https://only-gift.herokuapp.com/user/${Username}`);
+  const [link, setLink] = useState(`localhost:3000/user/${Username}`);
   const [copySuccess, setCopySuccess] = useState('');
 
   const inputHandler = (event) => {
@@ -39,7 +39,7 @@ const PrivateProfile = () => {
         <div className='copy_link'>
           <input
             id='link'
-            value={`https://only-gift.herokuapp.com/user/${Username}`}
+            value={`localhost:3000/user/${Username}`}
             onChange={inputHandler}
           />
           <button id='btn' onClick={copy} disabled={!link}>
