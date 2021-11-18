@@ -27,7 +27,7 @@ const stripeForm = () => {
         name="onlyGifts"
         image=""
         email
-        description="Your total is £5"
+        description="Your total is £50"
         amount={5000}
         token={tokenHandler}
         stripeKey={KEY}

@@ -10,7 +10,7 @@ import Messages from './Pages/Messages';
 import Home from './Pages/Home';
 
 // import messageForm from "./components/message-form.components.js";
-// import Form from "./components/stripe.components.js";
+import stripeForm from "./components/Stripe";
 
 import Cookies from 'js-cookie';
 const Username = Cookies.get('username');
@@ -27,7 +27,7 @@ function App() {
         <Route path='/user/:username' component={UserProfile} />
         <Route path='/login' component={Login} />
         <Route path='/inbox' component={Messages} />
-        {/* <Route path="/p-form" component={Form} /> */}
+        <Route path="/p-form" component={stripeForm} />
         {/* <Route path="/m-form" component={messageForm} /> */}
       </div>
     </Router>
