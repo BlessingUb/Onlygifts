@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import FocusTrap from "focus-trap-react";
-
+// import MessageForm from './MessageForm';
 import EditForm from "./EditProfileForm";
 import Form from "./Form";
 
