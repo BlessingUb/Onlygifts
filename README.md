@@ -66,15 +66,17 @@ I want to see a list of messages sent to me.
 
 ## How to set up database and run the program locally
 1. Clone this repo
-2. In both root directory ie client and server
+2. Fromt he main directory, enter into both root directory ie client and server
+
  ```
  cd client
  cd server
  ```
-3. Create a .env file in the root directory
-4. Set up a MongoDB account and follow the [guide]( https://docs.mongodb.com/manual/tutorial/getting-started/) to setting up your database
-5. Add your connection string from MongoDB into your .env file
-6. In the client directory run
+3. Install node.js and npm on your machine. then run npm i on both client and server directory.
+4. Create a .env file in the server side root directory - rememeber to add to your gitignore file.
+5. Set up a MongoDB account and follow the [guide]( https://docs.mongodb.com/manual/tutorial/getting-started/) to setting up your database
+6. Add your connection string from MongoDB into your .env file and set it to be equal to DB_URI
+7. In the client directory run
  ```
  npm install 
  npm start
@@ -85,9 +87,21 @@ I want to see a list of messages sent to me.
  npm start
  ```
 
+## Check how the applicaiton works
+Start the server side of your application in the terminal cd server && npm start
+You will get notified if the connection is establised successfully.
+
+Open the client side concurrently in a new terminal cd client && npm start
+Your browser should open up a new window and direct you to localhost:3000.
+
+Now you can register on Only Gifts and share your custom link with your friends!
+
+
+
+
 ### Meet the amazing Engineers who worked on this projects 
+- [Farya](https://github.com/Xfarya)
 - [Corinne](https://github.com/CorinneBosch)
 - [Blessing](https://github.com/BlessingUb)
-- [Farya](https://github.com/Xfarya)
 - [Hotu](https://github.com/ClaimingCookie5)
 - [Suhani](https://github.com/suhani-zaman)
