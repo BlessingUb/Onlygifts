@@ -25,7 +25,7 @@ A platform that allows users to receive small gifts from friends and families vi
  npm start
  ```
 
-## Check how the applicaiton works
+## Check how the Application works
 Start the server side of your application in the terminal cd server && npm start
 You will get notified if the connection is establised successfully.
 
@@ -33,6 +33,33 @@ Open the client side concurrently in a new terminal cd client && npm start
 Your browser should open up a new window and direct you to localhost:3000.
 
 Now you can register on Only Gifts and share your custom link with your friends!
+
+## Test the Application
+To run integration tests open the cypress extension in your command line.
+In a separate terminal start your client local host.
+
+```bash
+cd client && npx cypress open
+cd client && npm start
+
+```
+Execute all tests in your terminal.
+Start local host first and run cypress in a second terminal.
+
+```bash
+cd client && npm start
+cd client && npx cypress run
+
+```
+
+For the Server Tests
+The server side uses Jest for end-point testing. Test data is stored in a separate database table. Create a separate database in your cluster.
+Set it equal to DB_URI_TEST in your .env file.
+
+```bash 
+cd server && npm test
+```
+
 ## Epics:
 
 ```
